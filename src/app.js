@@ -1,7 +1,29 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
+import axios from 'axios';
+
+async function readText(path) {
+  if (path.endsWith('/')) {
+    path += 'index.md';
+  }
+  const resp = await axios.get(path);
+  console.log('resp', resp);
+  if (resp.status !== 200 || !resp.headers['content-type'].startsWith('text/markdown')) {
+    throw new Error('Not found: ' + path);
+  }
+  return resp.data;
+}
 
 export function App() {
+  console.log(window.location.pathname);
+
+  useEffect(() => {
+    const fn = async () => {
+      const text = await readText(window.location.pathname);
+      console.log(text);
+    };
+    fn();
+  }, [window.location.pathname]);
   return (
     <>
       <section className="hero is-info">
