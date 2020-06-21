@@ -39586,33 +39586,35 @@ function readText(_x) {
 
 function _readText() {
   _readText = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2(path) {
-    var resp;
+    var base, resp;
     return regeneratorRuntime.wrap(function _callee2$(_context2) {
       while (1) {
         switch (_context2.prev = _context2.next) {
           case 0:
+            base = 'https://raw.githubusercontent.com/fhellwig/fhellwig.github.io/master/static';
+
             if (path.endsWith('/')) {
               path += 'index.md';
             }
 
-            _context2.next = 3;
-            return _axios.default.get(path);
+            _context2.next = 4;
+            return _axios.default.get(base + path);
 
-          case 3:
+          case 4:
             resp = _context2.sent;
             console.log('resp', resp);
 
             if (!(resp.status !== 200 || !resp.headers['content-type'].startsWith('text/markdown'))) {
-              _context2.next = 7;
+              _context2.next = 8;
               break;
             }
 
             throw new Error('Not found: ' + path);
 
-          case 7:
+          case 8:
             return _context2.abrupt("return", resp.data);
 
-          case 8:
+          case 9:
           case "end":
             return _context2.stop();
         }
@@ -40044,7 +40046,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61007" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61939" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

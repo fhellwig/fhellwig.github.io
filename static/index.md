@@ -1,1 +1,7 @@
-# Index file
+# Index
+
+Blog Posts
+
+- one
+- two
+- three

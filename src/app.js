@@ -2,13 +2,15 @@ import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
 
+const base = 'https://raw.githubusercontent.com/fhellwig/fhellwig.github.io/master/static';
+
 async function readText(path) {
   if (path.endsWith('/')) {
     path += 'index.md';
   }
-  const resp = await axios.get(path);
+  const resp = await axios.get(base + path);
   console.log('resp', resp);
-  if (resp.status !== 200 || !resp.headers['content-type'].startsWith('text/markdown')) {
+  if (resp.status !== 200) {
     throw new Error('Not found: ' + path);
   }
   return resp.data;
