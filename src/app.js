@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
 
-const base = 'https://raw.githubusercontent.com/fhellwig/fhellwig.github.io/master/static';
+const base = 'https://raw.githubusercontent.com/fhellwig/fhellwig.github.io/master/content';
 
 async function readText(path) {
   if (path.endsWith('/')) {

@@ -26,7 +26,6 @@
     "@babel/preset-react": "^7.8.3",
     "move-file-cli": "^2.0.0",
     "parcel-bundler": "^1.12.4",
-    "parcel-plugin-static-files-copy": "^2.4.3",
     "rimraf": "^3.0.2",
     "sass": "^1.26.8"
   }
