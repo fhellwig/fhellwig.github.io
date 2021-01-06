@@ -11,7 +11,7 @@
   "license": "UNLICENSED",
   "dependencies": {
     "@reach/router": "^1.3.3",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "bulma": "^0.9.0",
     "core-js": "^2.6.11",
     "react": "^16.13.1",
